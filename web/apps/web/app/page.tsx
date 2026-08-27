@@ -185,15 +185,6 @@ export default function HomePage() {
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <Button size="lg" asChild>
-                  <a
-                    href="https://github.com/TraceMachina/nativelink"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Clone the repo <span aria-hidden="true">→</span>
-                  </a>
-                </Button>
-                <Button size="lg" variant="outline" asChild>
                   <a href={PRIMARY_CTA_HREF}>{PRIMARY_CTA_LABEL}</a>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
