@@ -141,13 +141,7 @@ export default function ProductPage() {
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
                 <Button size="lg" asChild>
-                  <a
-                    href="https://github.com/TraceMachina/nativelink"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Clone the repo <span aria-hidden="true">→</span>
-                  </a>
+                  <a href="/docs">Start in 10 minutes</a>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
                   <a href="mailto:contact@tracemachina.com">Talk to us</a>
