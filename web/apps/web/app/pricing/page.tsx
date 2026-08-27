@@ -1,4 +1,12 @@
-import { Button, Eyebrow, Reveal, Section, cn } from "@nativelink/ui";
+import {
+  Button,
+  Eyebrow,
+  PRIMARY_CTA_HREF,
+  PRIMARY_CTA_LABEL,
+  Reveal,
+  Section,
+  cn,
+} from "@nativelink/ui";
 import { Fragment } from "react";
 
 export const metadata = { title: "Pricing" };
@@ -16,7 +24,7 @@ const tiers = [
       "All build systems (Bazel, Buck2, Siso, Pants)",
       "All major cloud providers",
     ],
-    cta: { label: "Get started", href: "/docs" },
+    cta: { label: PRIMARY_CTA_LABEL, href: PRIMARY_CTA_HREF },
   },
   {
     name: "Enterprise",
@@ -164,8 +172,8 @@ export default function PricingPage() {
                   <Button asChild size="lg" variant="outline" className="w-full">
                     <a
                       href={tier.cta.href}
-                      target={tier.cta.label === "Get started" ? "_blank" : undefined}
-                      rel={tier.cta.label === "Get started" ? "noreferrer" : undefined}
+                      target={tier.cta.href === PRIMARY_CTA_HREF ? "_blank" : undefined}
+                      rel={tier.cta.href === PRIMARY_CTA_HREF ? "noreferrer" : undefined}
                     >
                       {tier.cta.label}
                     </a>

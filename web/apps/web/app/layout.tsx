@@ -1,4 +1,12 @@
-import { FinalCTA, SiteFooter, SiteHeader, ThemeProvider, themeInitScript } from "@nativelink/ui";
+import {
+  FinalCTA,
+  PRIMARY_CTA_HREF,
+  PRIMARY_CTA_LABEL,
+  SiteFooter,
+  SiteHeader,
+  ThemeProvider,
+  themeInitScript,
+} from "@nativelink/ui";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
@@ -38,8 +46,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <FinalCTA
             title="Let's build at the speed your code is being written."
             body="Open source. Self-host the moment your team is ready."
-            primaryLabel="Get started"
-            primaryHref="/docs"
+            primaryLabel={PRIMARY_CTA_LABEL}
+            primaryHref={PRIMARY_CTA_HREF}
             primaryNewTab
             secondaryLabel="See pricing"
             secondaryHref="/pricing"
