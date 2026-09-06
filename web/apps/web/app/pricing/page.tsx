@@ -178,7 +178,7 @@ export default function PricingPage() {
       </Section>
 
       {/* COMPARISON */}
-      <Section width="default" className="py-28">
+      <Section width="default" className="scroll-mt-24 py-28" id="compare">
         <Reveal>
           <div className="mx-auto mb-12 max-w-[680px] text-center">
             <Eyebrow className="mb-4">Compare</Eyebrow>
