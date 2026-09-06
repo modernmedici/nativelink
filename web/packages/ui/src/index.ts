@@ -19,3 +19,10 @@ export { Counter } from "./components/counter";
 export { Marquee } from "./components/marquee";
 export { HeroVisual } from "./components/hero-visual";
 export { cn } from "./lib/cn";
+export {
+  PRIMARY_CTA_HREF,
+  PRIMARY_CTA_LABEL,
+  TALK_TO_US_HREF,
+  TALK_TO_US_LABEL,
+  opensInNewTab,
+} from "./lib/cta";
