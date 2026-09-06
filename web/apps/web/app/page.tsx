@@ -8,7 +8,19 @@ import {
   ThirdWaveLogo,
 } from "@/components/customer-logos";
 import { McpDemo } from "@/components/mcp-demo";
-import { Badge, Button, Eyebrow, HeroVisual, Marquee, Reveal, Section } from "@nativelink/ui";
+import {
+  Badge,
+  Button,
+  Eyebrow,
+  HeroVisual,
+  Marquee,
+  PRIMARY_CTA_HREF,
+  PRIMARY_CTA_LABEL,
+  Reveal,
+  Section,
+  TALK_TO_US_HREF,
+  TALK_TO_US_LABEL,
+} from "@nativelink/ui";
 
 export const metadata = {
   title: "NativeLink — Build infrastructure for the agentic era",
@@ -173,21 +185,10 @@ export default function HomePage() {
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <Button size="lg" asChild>
-                  <a
-                    href="https://github.com/TraceMachina/nativelink"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Clone the repo <span aria-hidden="true">→</span>
-                  </a>
+                  <a href={PRIMARY_CTA_HREF}>{PRIMARY_CTA_LABEL}</a>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
-                  <a href="/docs" target="_blank" rel="noreferrer">
-                    Start free
-                  </a>
-                </Button>
-                <Button size="lg" variant="ghost" asChild>
-                  <a href="/contact">Talk to us</a>
+                  <a href={TALK_TO_US_HREF}>{TALK_TO_US_LABEL}</a>
                 </Button>
               </div>
             </Reveal>

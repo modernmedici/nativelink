@@ -1,4 +1,5 @@
 import { cn } from "../lib/cn";
+import { PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL, opensInNewTab } from "../lib/cta";
 import { Button } from "./button";
 import { Logo } from "./logo";
 import { MobileNav } from "./mobile-nav";
@@ -8,13 +9,6 @@ export interface NavLink {
   label: string;
   href: string;
 }
-
-const opensInNewTab = (label: string, href: string) =>
-  label === "Docs" ||
-  label === "Get started" ||
-  label === "Start free" ||
-  href === "/docs" ||
-  href.startsWith("http");
 
 interface SiteHeaderProps {
   links?: NavLink[];
@@ -35,8 +29,8 @@ const defaultLinks: NavLink[] = [
 
 export function SiteHeader({
   links = defaultLinks,
-  ctaLabel = "Get started",
-  ctaHref = "/docs",
+  ctaLabel = PRIMARY_CTA_LABEL,
+  ctaHref = PRIMARY_CTA_HREF,
   githubHref = "https://github.com/TraceMachina/nativelink",
   className,
 }: SiteHeaderProps) {
@@ -73,8 +67,8 @@ export function SiteHeader({
               <li key={link.href}>
                 <a
                   href={link.href}
-                  target={opensInNewTab(link.label, link.href) ? "_blank" : undefined}
-                  rel={opensInNewTab(link.label, link.href) ? "noreferrer" : undefined}
+                  target={opensInNewTab(link.href) ? "_blank" : undefined}
+                  rel={opensInNewTab(link.href) ? "noreferrer" : undefined}
                   className="inline-flex h-9 items-center rounded-full px-3.5 text-[13px] font-medium text-muted-foreground transition-colors hover:bg-foreground/[0.04] hover:text-foreground"
                 >
                   {link.label}
@@ -104,8 +98,8 @@ export function SiteHeader({
           <Button asChild size="sm" variant="primary" className="hidden md:inline-flex">
             <a
               href={ctaHref}
-              target={opensInNewTab(ctaLabel, ctaHref) ? "_blank" : undefined}
-              rel={opensInNewTab(ctaLabel, ctaHref) ? "noreferrer" : undefined}
+              target={opensInNewTab(ctaHref) ? "_blank" : undefined}
+              rel={opensInNewTab(ctaHref) ? "noreferrer" : undefined}
             >
               {ctaLabel}
             </a>

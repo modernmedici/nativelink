@@ -1,13 +1,17 @@
+import { ArchitectureDiagram } from "@/components/architecture-diagram";
 import {
   Badge,
   Button,
   Eyebrow,
   FAQ,
   type FAQItem,
+  PRIMARY_CTA_HREF,
+  PRIMARY_CTA_LABEL,
   Reveal,
   Section,
+  TALK_TO_US_HREF,
+  TALK_TO_US_LABEL,
 } from "@nativelink/ui";
-import { ArchitectureDiagram } from "@/components/architecture-diagram";
 
 export const metadata = { title: "Product" };
 
@@ -141,10 +145,10 @@ export default function ProductPage() {
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
                 <Button size="lg" asChild>
-                  <a href="/docs">Start in 10 minutes</a>
+                  <a href={PRIMARY_CTA_HREF}>{PRIMARY_CTA_LABEL}</a>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
-                  <a href="mailto:contact@tracemachina.com">Talk to us</a>
+                  <a href={TALK_TO_US_HREF}>{TALK_TO_US_LABEL}</a>
                 </Button>
               </div>
             </div>

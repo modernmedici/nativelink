@@ -3,6 +3,7 @@
 import * as React from "react";
 import { createPortal } from "react-dom";
 import { cn } from "../lib/cn";
+import { opensInNewTab } from "../lib/cta";
 import { Button } from "./button";
 import { Logo } from "./logo";
 import type { NavLink } from "./site-header";
@@ -14,13 +15,6 @@ interface MobileNavProps {
   ctaHref: string;
   githubHref?: string;
 }
-
-const opensInNewTab = (label: string, href: string) =>
-  label === "Docs" ||
-  label === "Get started" ||
-  label === "Start free" ||
-  href === "/docs" ||
-  href.startsWith("http");
 
 export function MobileNav({
   links,
@@ -167,8 +161,8 @@ export function MobileNav({
                     >
                       <a
                         href={link.href}
-                        target={opensInNewTab(link.label, link.href) ? "_blank" : undefined}
-                        rel={opensInNewTab(link.label, link.href) ? "noreferrer" : undefined}
+                        target={opensInNewTab(link.href) ? "_blank" : undefined}
+                        rel={opensInNewTab(link.href) ? "noreferrer" : undefined}
                         onClick={() => setOpen(false)}
                         className="group flex items-center justify-between rounded-xl px-4 py-4 text-2xl font-semibold tracking-tight text-foreground transition-colors hover:bg-brand-soft hover:text-brand"
                       >
@@ -189,8 +183,8 @@ export function MobileNav({
                   <Button asChild size="lg" className="w-full">
                     <a
                       href={ctaHref}
-                      target={opensInNewTab(ctaLabel, ctaHref) ? "_blank" : undefined}
-                      rel={opensInNewTab(ctaLabel, ctaHref) ? "noreferrer" : undefined}
+                      target={opensInNewTab(ctaHref) ? "_blank" : undefined}
+                      rel={opensInNewTab(ctaHref) ? "noreferrer" : undefined}
                       onClick={() => setOpen(false)}
                     >
                       {ctaLabel}
