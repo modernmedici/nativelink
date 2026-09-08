@@ -3,6 +3,7 @@ import { GoogleTagManager } from "@next/third-parties/google";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
+import Script from "next/script";
 import type { ReactNode } from "react";
 import { AppSiteHeader } from "../components/site-header";
 import "./globals.css";
@@ -25,10 +26,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       suppressHydrationWarning
       className={`${GeistSans.variable} ${GeistMono.variable}`}
     >
-      <head>
-        {/* biome-ignore lint/security/noDangerouslySetInnerHtml: Inline before hydration so the theme is correct on first paint. */}
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
-      </head>
+      <Script id="nl-theme-init" strategy="beforeInteractive">
+        {themeInitScript}
+      </Script>
       <GoogleTagManager gtmId="GTM-NNLLRWGB" />
       <body className="flex min-h-screen flex-col bg-background text-foreground antialiased">
         <ThemeProvider>
