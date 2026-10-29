@@ -268,7 +268,8 @@ export default function HomePage() {
               The MCP server is part of NativeLink Enterprise and requires an Enterprise licence.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <Button variant="link" asChild>
+              {/* whitespace-normal: the Button base is nowrap, and this label is wider than a phone. */}
+              <Button variant="link" asChild className="whitespace-normal text-center">
                 <a href="/agents">
                   Everything we offer agents: llms.txt, skills, and how to contribute{" "}
                   <span aria-hidden="true">→</span>
@@ -394,7 +395,9 @@ export default function HomePage() {
         </Reveal>
       </Section>
 
-      <Section width="default" className="py-28">
+      {/* overflow-x-clip: the dashboard panel's glow halo reaches 32px past the panel, which is
+          wider than the page padding on a phone. */}
+      <Section width="default" className="overflow-x-clip py-28">
         <Reveal>
           <div className="mx-auto mb-14 max-w-[720px] text-center">
             <Eyebrow className="mb-4">What you get</Eyebrow>
