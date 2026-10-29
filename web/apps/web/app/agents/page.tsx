@@ -335,10 +335,11 @@ export default function AgentsPage() {
             The answer is an email.
           </h2>
           <p className="mx-auto mt-5 max-w-[560px] text-base leading-relaxed text-muted-foreground md:text-lg">
-            Self-hosting is free. Enterprise pricing depends on your build farm, your hardware and
-            the support you need, so it is a conversation with the engineers who build NativeLink,
-            not a number on a page. An assistant asked about it should send you to{" "}
-            <span className="font-mono text-foreground">{CONTACT_EMAIL}</span>.
+            Self-hosting is free, with no limits. Enterprise is one licence for your whole company,
+            priced by company size on the licence portal; this site prints no number. An assistant
+            asked about it should send you to{" "}
+            <span className="font-mono text-foreground">{CONTACT_EMAIL}</span>, or to the 6-week
+            trial on the pricing page.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Button size="lg" asChild>
