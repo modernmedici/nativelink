@@ -218,7 +218,7 @@ export default function PricingPage() {
                           href={ENTERPRISE_URL}
                           target="_blank"
                           rel="noreferrer"
-                          className="text-brand underline-offset-4 hover:underline"
+                          className="inline-flex min-h-11 items-center text-brand underline-offset-4 hover:underline"
                         >
                           {tier.enterprise.portalLabel}
                         </a>
@@ -263,13 +263,16 @@ export default function PricingPage() {
               the sticky header's scroll container and pin it to the box instead of the viewport.
               Below md four columns cannot fit a phone, so the box scrolls sideways instead and the
               header stops being sticky there, which is the lesser loss. */}
+          <p className="mx-auto mb-3 max-w-[1100px] font-mono text-[11px] uppercase tracking-[0.14em] text-muted md:hidden">
+            Swipe sideways to compare the Enterprise tiers →
+          </p>
           <div className="mx-auto max-w-[1100px] overflow-x-auto rounded-2xl border border-border bg-surface md:overflow-clip">
             <table className="w-full min-w-[640px] border-separate border-spacing-0 text-left md:min-w-0">
               <thead>
                 <tr>
                   <th
                     scope="col"
-                    className="sticky top-16 z-10 w-[34%] border-b border-border bg-surface-elevated px-3 py-4 text-left align-bottom font-mono text-[10px] uppercase tracking-widest text-muted sm:px-6"
+                    className="sticky left-0 top-16 z-20 w-[34%] border-b border-border bg-surface-elevated px-3 py-4 text-left align-bottom font-mono text-[10px] uppercase tracking-widest text-muted sm:px-6"
                   >
                     Feature
                   </th>
@@ -295,7 +298,7 @@ export default function PricingPage() {
               <tbody>
                 {universal.length > 0 ? (
                   <tr className="bg-brand-soft/30">
-                    <td className="border-b border-border px-3 py-4 align-top sm:px-6">
+                    <td className="sticky left-0 z-10 border-b border-border bg-surface px-3 py-4 align-top sm:px-6 md:static md:bg-transparent">
                       <span className="block text-[15px] font-medium text-foreground">
                         Core platform, included in every tier
                       </span>
@@ -325,7 +328,7 @@ export default function PricingPage() {
                     </tr>
                     {group.rows.map((row) => (
                       <tr key={row.label}>
-                        <td className="border-b border-border px-3 py-4 text-sm text-foreground sm:px-6 sm:text-[15px]">
+                        <td className="sticky left-0 z-10 border-b border-border bg-surface px-3 py-4 text-sm text-foreground sm:px-6 sm:text-[15px] md:static md:bg-transparent">
                           {row.label}
                         </td>
                         {tiers.map((tier) => (
@@ -340,7 +343,7 @@ export default function PricingPage() {
               </tbody>
               <tfoot>
                 <tr>
-                  <td className="px-3 py-5 font-mono text-[10px] uppercase tracking-widest text-muted sm:px-6">
+                  <td className="sticky left-0 z-10 bg-surface px-3 py-5 font-mono text-[10px] uppercase tracking-widest text-muted sm:px-6 md:static md:bg-transparent">
                     Next step
                   </td>
                   {tiers.map((tier) => (
@@ -392,28 +395,6 @@ export default function PricingPage() {
             <TrialRequestForm />
           </Reveal>
         </div>
-      </Section>
-
-      {/* BOTTOM CONTACT */}
-      <Section width="narrow" className="border-t border-border/60 py-24 text-center">
-        <Reveal>
-          <h2 className="text-balance text-4xl font-semibold leading-[1.05] tracking-[-0.03em] md:text-5xl">
-            Want to talk it through?
-          </h2>
-          <p className="mx-auto mt-5 max-w-[560px] text-base leading-relaxed text-muted-foreground md:text-lg">
-            Email <span className="font-mono text-foreground">{PRICING_EMAIL}</span> and the
-            engineers who build NativeLink will walk through the tiers for your team and workload.
-            Replies usually come within a day.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Button size="lg" asChild>
-              <a href={PRICING_MAILTO}>Email us about pricing</a>
-            </Button>
-            <Button size="lg" variant="outline" asChild>
-              <a href="/community">Join community</a>
-            </Button>
-          </div>
-        </Reveal>
       </Section>
     </>
   );
