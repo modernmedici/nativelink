@@ -64,5 +64,5 @@ export function useTheme(): ThemeContextValue {
 }
 
 /** Inline script to set the theme before paint — avoids FOUC. Inject via
- *  <script dangerouslySetInnerHTML={{ __html: themeInitScript }} /> in <head>. */
+ *  next/script with strategy="beforeInteractive" in the root layout. */
 export const themeInitScript = `(function(){try{var s=localStorage.getItem('nl-theme');var t=s==='light'||s==='dark'?s:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);document.documentElement.style.colorScheme=t;}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`;
